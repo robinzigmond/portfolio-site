@@ -10,6 +10,9 @@ class Tech(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ["name"]
+
 
 class Project(models.Model):
     name = models.CharField(max_length=32)
