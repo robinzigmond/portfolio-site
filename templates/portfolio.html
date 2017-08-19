@@ -5,11 +5,13 @@
             <h5>Please take a look at all the projects I have so far completed, or have in progress. If you check back here regularly you should notice the number gradually going up!</h5>
         </div>
     </div>
-    <div class="row">
+    <div class="row" id="project-list">
         {% for project in projects %}
-            <div class="col-xs-12 col-sm-6 col-lg-4">
-                <h3>{{ project.name }}</h3>
-                <img src="/media/{{ project.screenshot }}" width="270" height="135">
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="project-intro">
+                    <h3>{{ project.name }}</h3>
+                    <img src="/media/{{ project.screenshot }}" alt="{{ project.name }}-screenshot" width="270" height="135">
+                </div>
             </div>
         {% endfor %}
     </div>

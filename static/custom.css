@@ -18,3 +18,14 @@
     width: 150px;
     float: left;
 }
+
+.project-intro {
+    text-align: center;
+    padding-bottom: 5px;
+    margin: 5px;
+    border: 1px solid black;
+}
+
+.project-intro h3 {
+    border-bottom: 1px solid #777;
+}
