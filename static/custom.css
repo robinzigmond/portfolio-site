@@ -48,3 +48,7 @@
     display: block;
     margin: 30px auto 5px auto;
 }
+
+#closing {
+    font-size: 22px;
+}
