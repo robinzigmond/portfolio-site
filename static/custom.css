@@ -3,6 +3,7 @@
     max-width: 1000px;
     border: 2px solid black;
     margin-top: 30px;
+    margin-bottom: 30px;
     padding: 15px;
 }
 
@@ -12,6 +13,11 @@
 
 .pic {
     text-align: center;
+}
+
+.main-pic {
+    display: block;
+    margin: 40px auto;
 }
 
 .tech-list li {
@@ -28,4 +34,17 @@
 
 .project-intro h3 {
     border-bottom: 1px solid #777;
+}
+
+.project-intro a:hover {
+    text-decoration: none;
+}
+
+.project-intro a h3:hover {
+    text-decoration: underline;
+}
+
+.back {
+    display: block;
+    margin: 10px auto;;
 }
