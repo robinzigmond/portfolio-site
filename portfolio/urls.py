@@ -15,9 +15,16 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.views.static import serve
+from settings import MEDIA_ROOT
 from projects import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r"^$", views.home)
+    url(r"^$", views.home),
+    url(r"^about/$", views.about),
+    url(r"^techs/$", views.techs),
+    url(r"^portfolio/$", views.portfolio),
+    url(r"^cv/$", views.cv),
+    url(r"^media/(?P<path>.*)$", serve, {"document_root": MEDIA_ROOT})
 ]

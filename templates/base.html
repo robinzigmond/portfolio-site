@@ -1,27 +1,27 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Robin Zigmond - Web Developer</title>
-    <link rel="stylesheet" href="{% static 'lib/bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'custom.css' %}">
-</head>
-<body>
-    <div class="container" id="main">
-        <ul class="nav nav-tabs nav-justified">
-            <li {% if active == "home" %}class="active"{% endif %}><a href="#">Home</a></li>
-            <li {% if active == "about" %}class="active"{% endif %}><a href="#">About</a></li>
-            <li {% if active == "techs" %}class="active"{% endif %}><a href="#">Techs</a></li>
-            <li {% if active == "portfolio" %}class="active"{% endif %}><a href="#">Portfolio</a></li>
-            <li {% if active == "CV" %}class="active"{% endif %}><a href="#">CV</a></li>
-        </ul>
-        {% block content %}
-        {% endblock %}
-    </div>
-    <script src="{% static 'lib/jquery-3.2.1.min.js' %}"></script>
-    <script src="{% static 'lib/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Robin Zigmond - Web Developer</title>
+        <link rel="stylesheet" href="{% static 'lib/bootstrap-3.3.7-dist/css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'custom.css' %}">
+    </head>
+    <body>
+        <div class="container" id="main">
+            <ul class="nav nav-tabs nav-justified">
+                <li {% if active == "home" %}class="active"{% endif %}><a href="/">Home</a></li>
+                <li {% if active == "about" %}class="active"{% endif %}><a href="/about/">About</a></li>
+                <li {% if active == "techs" %}class="active"{% endif %}><a href="/techs/">Techs</a></li>
+                <li {% if active == "portfolio" %}class="active"{% endif %}><a href="/portfolio/">Portfolio</a></li>
+                <li {% if active == "CV" %}class="active"{% endif %}><a href="/cv/">CV</a></li>
+            </ul>
+            {% block content %}
+            {% endblock %}
+        </div>
+        <script src="{% static 'lib/jquery-3.2.1.min.js' %}"></script>
+        <script src="{% static 'lib/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
+    </body>
 </html>

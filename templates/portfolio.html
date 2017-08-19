@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12 title">
+            <h5>Please take a look at all the projects I have so far completed, or have in progress. If you check back here regularly you should notice the number gradually going up!</h5>
+        </div>
+    </div>
+    <div class="row">
+        {% for project in projects %}
+            <div class="col-xs-12 col-sm-6 col-lg-4">
+                <h3>{{ project.name }}</h3>
+                <img src="/media/{{ project.screenshot }}" width="270" height="135">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -17,7 +17,10 @@ class Project(models.Model):
     gitHubLink = models.URLField()
     activeLink = models.URLField(blank=True)
     techs = models.ManyToManyField(Tech, blank=True)
+    screenshot = models.ImageField(upload_to="screenshots", null=True, blank=True)
 
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        ordering = ["name"]
