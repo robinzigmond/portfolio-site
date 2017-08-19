@@ -3,11 +3,12 @@ from __future__ import unicode_literals
 
 from django.shortcuts import render
 from django.http import Http404
+from django.db.models.functions import Lower
 import models
 
 # Create your views here.
 def home(request):
-    techs = models.Tech.objects.all()
+    techs = models.Tech.objects.all().order_by(Lower("name"))
     for tech in techs:
         tech.formatted_name = tech.name.lower().replace(" ", "-").replace(".", "")
     return render(request, "home.html", {"active": "home", "techlist": techs})
@@ -18,7 +19,7 @@ def about(request):
 
 
 def techs(request):
-    techs = models.Tech.objects.all()
+    techs = models.Tech.objects.all().order_by("-skill_level")
     for tech in techs:
         tech.formatted_name = tech.name.lower().replace(" ", "-").replace(".", "")
         tech.skill_level_times_ten = 10*tech.skill_level
@@ -26,7 +27,7 @@ def techs(request):
 
 
 def single_tech(request, name):
-    techs = models.Tech.objects.all()
+    techs = models.Tech.objects.all().order_by(Lower("name"))
     tech = None
     for technology in techs:
         technology.formatted_name = technology.name.lower().replace(" ", "-").replace(".", "")
@@ -46,7 +47,7 @@ def portfolio(request):
 
 
 def projects_by_tech(request, tech):
-    techs = models.Tech.objects.all()
+    techs = models.Tech.objects.all().order_by(Lower("name"))
     tech_name = None
     for technology in techs:
         technology.formatted_name = technology.name.lower().replace(" ", "-").replace(".", "")
@@ -68,7 +69,7 @@ def single_project(request, name):
             project = site
     if project is None:
         raise Http404("Sorry, project not found")
-    techs_used = project.techs.all()
+    techs_used = project.techs.all().order_by(Lower("name"))
     for tech in techs_used:
         tech.formatted_name = tech.name.lower().replace(" ", "-").replace(".", "")
     return render(request, "project.html", {"active": "portfolio", "project": project, "techs": techs_used})

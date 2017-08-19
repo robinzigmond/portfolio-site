@@ -15,8 +15,12 @@
             <p>{{ project.description }}</p>
         </div>
         <div class="col-xs-12">
-            <p><strong>Link:</strong> <a href="{{ project.activeLink }}">{{ project.activeLink }} </a></p>
-            <p><strong>Code:</strong> <a href="{{ project.gitHubLink }}"> {{ project.gitHubLink }} </a></p>
+            {% if project.activeLink %}
+                <p><strong>Link:</strong> <a href="{{ project.activeLink }}">{{ project.activeLink }} </a></p>
+            {% endif %}
+            {% if project.gitHubLink %}
+                <p><strong>Code:</strong> <a href="{{ project.gitHubLink }}"> {{ project.gitHubLink }} </a></p>
+            {% endif %}
         </div>
     </div>
     {% if techs %}

@@ -14,13 +14,13 @@ class Tech(models.Model):
         return self.name
 
     class Meta:
-        ordering = ["-skill_level"]
+        ordering = ["name"]
 
 
 class Project(models.Model):
     name = models.CharField(max_length=32)
     description = models.TextField()
-    gitHubLink = models.URLField()
+    gitHubLink = models.URLField(blank=True)
     activeLink = models.URLField(blank=True)
     techs = models.ManyToManyField(Tech, blank=True)
     screenshot = models.ImageField(upload_to="screenshots", null=True, blank=True)
