@@ -22,7 +22,7 @@
             </div>
             <ul class="tech-list">
                 {% for tech in techlist %}
-                    <li><a href="#">{{ tech.name }}</a></li>
+                    <li><a href="/tech/{{ tech.formatted_name }}">{{ tech.name }}</a></li>
                 {% endfor %}
             </ul>
         </div>

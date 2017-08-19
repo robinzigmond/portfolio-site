@@ -7,8 +7,10 @@ import models
 
 # Create your views here.
 def home(request):
-    tech = models.Tech.objects.all()
-    return render(request, "home.html", {"active": "home", "techlist": tech})
+    techs = models.Tech.objects.all()
+    for tech in techs:
+        tech.formatted_name = tech.name.lower().replace(" ", "-").replace(".", "")
+    return render(request, "home.html", {"active": "home", "techlist": techs})
 
 
 def about(request):
@@ -17,6 +19,17 @@ def about(request):
 
 def techs(request):
     return render(request, "techs.html", {"active": "techs"})
+
+
+def single_tech(request, name):
+    techs = models.Tech.objects.all()
+    tech = None
+    for technology in techs:
+        if technology.name.lower().replace(".", "") == name.replace("-", " "):
+            tech = technology
+    if tech is None:
+        raise Http404("Sorry, tech not found")
+    return render(request, "tech.html", {"active": "techs", "tech": tech})
 
 
 def portfolio(request):
@@ -35,6 +48,8 @@ def single_project(request, name):
     if project is None:
         raise Http404("Sorry, project not found")
     techs_used = project.techs.all()
+    for tech in techs_used:
+        tech.formatted_name = tech.name.lower().replace(" ", "-").replace(".", "")
     return render(request, "project.html", {"active": "portfolio", "project": project, "techs": techs_used})
 
 

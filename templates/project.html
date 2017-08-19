@@ -25,7 +25,7 @@
                 <h4 class="title">Tech used:</h4>
                 <ul class="tech-list">
                 {% for tech in techs %}
-                    <li><a href="#">{{ tech.name }}</a></li>
+                    <li><a href="/tech/{{ tech.formatted_name }}">{{ tech.name }}</a></li>
                 {% endfor %}
             </ul>
             </div>

@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <div class="row">
+        <div class="col-xs-12">
+        <h2 class="title">{{ tech.name }}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>{{ tech.description }}</p>
+        </div>
+        <div class="col-xs-12">
+            <p><strong>Link:</strong> <a href="{{ tech.link }}">{{ tech.link }} </a></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>My estimated skill level: <strong>{{ tech.skill_level }}/10</strong></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-default back" onclick="location.href='/projects/'">Back to Portfolio</button>
+        </div>
+    </div>
+{% endblock %}
