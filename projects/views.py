@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
+from django.http import Http404
 import models
 
 # Create your views here.
@@ -20,7 +21,21 @@ def techs(request):
 
 def portfolio(request):
     projects = models.Project.objects.all()
+    for project in projects:
+        project.formatted_name = project.name.lower().replace(" ", "-")
     return render(request, "portfolio.html", {"active": "portfolio", "projects": projects})
+
+
+def single_project(request, name):
+    projects = models.Project.objects.all()
+    project = None
+    for site in projects:
+        if site.name.lower() == name.replace("-", " "):
+            project = site
+    if project is None:
+        raise Http404("Sorry, project not found")
+    techs_used = project.techs.all()
+    return render(request, "project.html", {"active": "portfolio", "project": project, "techs": techs_used})
 
 
 def cv(request):
