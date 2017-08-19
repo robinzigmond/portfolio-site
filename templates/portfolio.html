@@ -2,14 +2,18 @@
 {% block content %}
     <div class="row">
         <div class="col-xs-12 title">
-            <h5>Please take a look at all the projects I have so far completed, or have in progress. If you check back here regularly you should notice the number gradually going up!</h5>
+            {% if tech is not None %}
+                <h5>Projects using {{ tech.name }}:</h5>
+            {% else %}
+                <h5>Please take a look at all the projects I have so far completed, or have in progress. If you check back here regularly you should notice the number gradually going up!</h5>
+            {% endif %}
         </div>
     </div>
     <div class="row">
         {% for project in projects %}
             <div class="col-xs-12 col-md-6 col-lg-4">
                 <div class="project-intro">
-                    <a href="{{ project.formatted_name }}">
+                    <a href="/projects/{{ project.formatted_name }}">
                         <h3>{{ project.name }}</h3>
                         <img src="/media/{{ project.screenshot }}" alt="{{ project.name }}-screenshot" width="270" height="135">
                     </a>
@@ -17,4 +21,11 @@
             </div>
         {% endfor %}
     </div>
+    {% if tech is not None %}
+        <div class="row">
+            <div class="col-xs-12">
+                <button class="btn btn-default back" onclick="location.href='/tech/{{ tech.formatted_name }}'">Back to {{ tech.name }}</button>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}

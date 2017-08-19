@@ -15,12 +15,22 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <p>My estimated skill level: <strong>{{ tech.skill_level }}/10</strong></p>
+            <a href="/projects/using/{{ tech.formatted_name }}">Projects I've used this tech for</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" id="single-progress">
+            <p>My estimated skill level:</p>
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="{{ tech.skill_level }}" aria-valuemin="0" aria-valuemax="10" style="width: {{ tech.skill_level_times_ten }}%;">
+                    {{ tech.skill_level}}/10
+                </div>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <button class="btn btn-default back" onclick="location.href='/projects/'">Back to Portfolio</button>
+            <button class="btn btn-default back" onclick="location.href='/tech/'">Back to Techs</button>
         </div>
     </div>
 {% endblock %}
