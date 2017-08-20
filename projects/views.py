@@ -38,7 +38,6 @@ def single_tech(request, tech):
     tech_name = None
     for technology in techs:
         technology.formatted_name = technology.name.lower().replace(" ", "-").replace(".", "")
-        technology.skill_level_times_ten = 10*technology.skill_level
         if technology.name.lower().replace(".", "") == tech.replace("-", " "):
             tech_name = technology
     projects = models.Project.objects.filter(techs__name=tech_name)
