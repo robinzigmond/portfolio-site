@@ -13,11 +13,6 @@
             <p><strong>Link:</strong> <a href="{{ tech.link }}">{{ tech.link }} </a></p>
         </div>
     </div>
-    <div class="row" id="project-tech-search">
-        <div class="col-xs-12">
-            <p>See the <a href="/projects/using/{{ tech.formatted_name }}">projects</a> I've used this tech for</p>
-        </div>
-    </div>
     <div class="row">
         <div class="col-xs-12" id="single-progress">
             <p>My estimated skill level:</p>
@@ -27,6 +22,21 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <p>Projects I've used this tech for:</p>
+        </div>
+        {% for project in projects %}
+            <div class="col-xs-12 col-md-6 col-lg-4">
+                <div class="project-intro">
+                    <a href="/projects/{{ project.formatted_name }}">
+                        <h3>{{ project.name }}</h3>
+                        <img src="/media/{{ project.screenshot }}" alt="{{ project.name }}-screenshot" width="270" height="135">
+                    </a>
+                </div>
+            </div>
+        {% endfor %}
     </div>
     <div class="row">
         <div class="col-xs-12">

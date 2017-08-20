@@ -26,17 +26,17 @@ def techs(request):
     return render(request, "techs.html", {"active": "techs", "techs": techs})
 
 
-def single_tech(request, name):
-    techs = models.Tech.objects.all().order_by(Lower("name"))
-    tech = None
-    for technology in techs:
-        technology.formatted_name = technology.name.lower().replace(" ", "-").replace(".", "")
-        if technology.formatted_name == name:
-            tech = technology
-        technology.skill_level_times_ten = 10*technology.skill_level
-    if tech is None:
-        raise Http404("Sorry, tech not found")
-    return render(request, "tech.html", {"active": "techs", "tech": tech})
+# def single_tech(request, name):
+#    techs = models.Tech.objects.all().order_by(Lower("name"))
+#    tech = None
+#    for technology in techs:
+#        technology.formatted_name = technology.name.lower().replace(" ", "-").replace(".", "")
+#        if technology.formatted_name == name:
+#            tech = technology
+#        technology.skill_level_times_ten = 10*technology.skill_level
+#    if tech is None:
+#        raise Http404("Sorry, tech not found")
+#    return render(request, "tech.html", {"active": "techs", "tech": tech})
 
 
 def portfolio(request):
@@ -46,11 +46,12 @@ def portfolio(request):
     return render(request, "portfolio.html", {"active": "portfolio", "projects": projects})
 
 
-def projects_by_tech(request, tech):
+def single_tech(request, tech):
     techs = models.Tech.objects.all().order_by(Lower("name"))
     tech_name = None
     for technology in techs:
         technology.formatted_name = technology.name.lower().replace(" ", "-").replace(".", "")
+        technology.skill_level_times_ten = 10*technology.skill_level
         if technology.name.lower().replace(".", "") == tech.replace("-", " "):
             tech_name = technology
     projects = models.Project.objects.filter(techs__name=tech_name)
@@ -58,7 +59,7 @@ def projects_by_tech(request, tech):
         raise Http404("Sorry, no projects found using that tech")
     for project in projects:
         project.formatted_name = project.name.lower().replace(" ", "-")
-    return render(request, "portfolio.html", {"active": "portfolio", "projects": projects, "tech": tech_name})
+    return render(request, "tech.html", {"active": "techs", "projects": projects, "tech": tech_name})
 
 
 def single_project(request, name):
