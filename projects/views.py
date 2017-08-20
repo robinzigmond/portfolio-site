@@ -26,19 +26,6 @@ def techs(request):
     return render(request, "techs.html", {"active": "techs", "techs": techs})
 
 
-# def single_tech(request, name):
-#    techs = models.Tech.objects.all().order_by(Lower("name"))
-#    tech = None
-#    for technology in techs:
-#        technology.formatted_name = technology.name.lower().replace(" ", "-").replace(".", "")
-#        if technology.formatted_name == name:
-#            tech = technology
-#        technology.skill_level_times_ten = 10*technology.skill_level
-#    if tech is None:
-#        raise Http404("Sorry, tech not found")
-#    return render(request, "tech.html", {"active": "techs", "tech": tech})
-
-
 def portfolio(request):
     projects = models.Project.objects.all()
     for project in projects:
@@ -74,7 +61,3 @@ def single_project(request, name):
     for tech in techs_used:
         tech.formatted_name = tech.name.lower().replace(" ", "-").replace(".", "")
     return render(request, "project.html", {"active": "portfolio", "project": project, "techs": techs_used})
-
-
-def cv(request):
-    return render(request, "cv.html", {"active": "cv"})

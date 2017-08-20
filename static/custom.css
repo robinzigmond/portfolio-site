@@ -30,25 +30,10 @@ a:hover {
 }
 
 #tabs {
-    /*background-color: rgba(25,149,173,0.5);*/
     margin-bottom: 5px;
     padding-left: 0;
     padding-right: 0;
 }
-
-/*#tabs li.active a, #tabs li a:hover {
-    background-color: #e9633b;
-}
-
-#tabs li a {
-    border-bottom-color: #e9633b;
-}*/
-
-/*#content {
-    height: 80vh;
-    overflow-y: auto;
-    overflow-x: hidden;
-}*/
 
 .title {
     text-align: center;
@@ -73,7 +58,6 @@ a:hover {
     padding-bottom: 5px;
     margin: 10px 5px;
     border: 1px solid black;
-    /*min-width: 280px;*/
 }
 
 .project-intro h3 {
@@ -97,17 +81,23 @@ a:hover {
     font-size: 22px;
 }
 
-@media screen and (max-width: 768px) {
-    /*#main {
-        height: 85vh;
-        width: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
+@keyframes flash {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
 
-    #content {
-        height: auto;
-    }*/
+#cv {
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    background-color: white;
+}
+
+#cv p {
+    animation: flash 1s ease-in-out 1s infinite alternate;
+}
+
+@media screen and (max-width: 768px) {
 
     .nav-justified {
         overflow: hidden;
@@ -121,8 +111,6 @@ a:hover {
     }
 
     img {
-        /*display: block;
-        margin: 0 auto;*/
         width: 160px;
         height: auto;
     }

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 {% block content %}
     <div class="row">
         <div class="col-xs-12">
@@ -10,8 +11,8 @@
             <h3><strong>Enough about why <em>you</em> want a job! Why should anyone employ you as a developer?</strong></h3>
             <p>I genuinely believe that I have many strengths to bring to any company who is willing to invest in a Junior Web Developer. Firstly, my incredible passion for the field should be clear from everything I have said above. Secondly, I am a very quick learner - just 8 months ago I had never heard of CSS or Javascript, and had only the very faintest conception of HTML. Now, I am able to code complex projects, as showcased here, on my own, and have gained deep understanding of a number of important libraries and frameworks along the way. While I do not at the time of writing know anything of PHP, or Ruby on Rails, or ReactJS, to name just a few - the only thing preventing me from learning any or all of these is time, and how I choose to prioritise. In time, I <em>will</em> teach myself all the important web languages and frameworks, and learn to use them well. But if I am employed as a developer, and need to learn one or more of these as part of the job - then with the proper support I will learn them much quicker, and put them to use for the good of the company, rather than just doing side projects that I personally find fun.</p>
             <p>To sum up: <strong>I will bring enormous passion, enthusiasm, and speed of learning to any role I may work in.</strong></p>
-            <p>I am genuinely excited for my future as a developer - if you know of a company who would share my excitement and give me the one chance I need, please direct their attention to this site. And if you are hiring for such a company - thank you for reading. Please <a href="/CV">download my CV</a> and get in touch with me.</p>
-            <p id="closing"><strong> I look forward enormously to speaking to you.</strong></p>
+            <p>I am genuinely excited for my future as a developer - if you know of a company who would share my excitement and give me the one chance I need, please direct their attention to this site. And if you are hiring for such a company - thank you for reading. Please <a href="{% static 'CV.pdf' %}">download my CV</a> and get in touch with me.</p>
+            <p id="closing"><strong> I greatly look forward to speaking to you.</strong></p>
             <p>Robin Zigmond,</p>
             <p>August 2017</p>
         </div>

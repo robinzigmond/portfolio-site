@@ -26,8 +26,6 @@ urlpatterns = [
     url(r"^tech/$", views.techs),
     url(r"^tech/(?P<tech>.*)$", views.single_tech),
     url(r"^projects/$", views.portfolio),
-    # url(r"^projects/using/(?P<tech>.*)$", views.projects_by_tech),
     url(r"^projects/(?P<name>.*)$", views.single_project),
-    url(r"^cv/$", views.cv),
     url(r"^media/(?P<path>.*)$", serve, {"document_root": MEDIA_ROOT})
 ]

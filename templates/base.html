@@ -24,14 +24,16 @@
                         <li {% if active == "about" %}class="active"{% endif %}><a href="/about/">About</a></li>
                         <li {% if active == "techs" %}class="active"{% endif %}><a href="/tech/">Techs</a></li>
                         <li {% if active == "portfolio" %}class="active"{% endif %}><a href="/projects/">Portfolio</a></li>
-                        <li {% if active == "CV" %}class="active"{% endif %}><a href="/cv/">CV</a></li>
                     </ul>
                 </div>
             </nav>
-            <div id="content">
-                {% block content %}
-                {% endblock %}
+            <div class="row">
+                <div class="col-xs-12" id="cv">
+                    <p><a href="{% static 'CV.pdf' %}">Click here</a> to view and download my CV!</p>
+                </div>
             </div>
+            {% block content %}
+            {% endblock %}
         </div>
         <script src="{% static 'lib/jquery-3.2.1.min.js' %}"></script>
         <script src="{% static 'lib/bootstrap-3.3.7-dist/js/bootstrap.min.js' %}"></script>
