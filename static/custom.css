@@ -1,3 +1,10 @@
+body {
+    background-image: url("/static/images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 #main {
     width: 80%;
     max-width: 1000px;
@@ -5,7 +12,25 @@
     margin-top: 30px;
     margin-bottom: 30px;
     padding: 15px;
+    background-color: rgba(255, 255, 255, 0.7);
+    min-height: 90vh;
 }
+
+.navbar-default {
+    background-color: inherit;
+}
+
+#tabs {
+    margin-bottom: 5px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/*#content {
+    height: 80vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}*/
 
 .title {
     text-align: center;
@@ -30,6 +55,7 @@
     padding-bottom: 5px;
     margin: 10px 5px;
     border: 1px solid black;
+    /*min-width: 280px;*/
 }
 
 .project-intro h3 {
@@ -51,4 +77,35 @@
 
 #closing {
     font-size: 22px;
+}
+
+@media screen and (max-width: 768px) {
+    /*#main {
+        height: 85vh;
+        width: 100%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #content {
+        height: auto;
+    }*/
+
+    .nav-justified {
+        overflow: hidden;
+    }
+
+}
+
+@media screen and (max-width: 400px) {
+    .project-intro {
+        max-width: 210px;
+    }
+
+    img {
+        /*display: block;
+        margin: 0 auto;*/
+        width: 160px;
+        height: auto;
+    }
 }
