@@ -9,6 +9,7 @@ class Tech(models.Model):
     description = models.TextField()
     skill_level = models.PositiveSmallIntegerField()  # will be only used for 0-10 values
     link = models.URLField(blank=True)
+    icon = models.CharField(max_length=100, blank=True)
 
     def __unicode__(self):
         return self.name
