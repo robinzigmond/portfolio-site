@@ -36,6 +36,21 @@ a:hover {
     padding-right: 0;
 }
 
+h1.name {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+i.fa-linkedin-square {
+    color: #0077b5;
+    vertical-align: text-bottom;
+    line-height: 0.8;
+}
+
+i.fa-linkedin-square:hover {
+    color: #221e1d;
+}
+
 .title {
     text-align: center;
 }
@@ -49,10 +64,14 @@ a:hover {
     margin: 40px auto;
 }
 
+.tech-list {
+    list-style-type: none;
+    line-height: 2;
+}
+
 .tech-list li {
     width: 150px;
     float: left;
-    list-style-type: none;
 }
 
 h3.tech-title, h2.tech-title {
@@ -62,6 +81,7 @@ h3.tech-title, h2.tech-title {
 i[class^="devicon"] {
     font-size: 24px;
     vertical-align: text-bottom;
+    line-height: 1.1;
 }
 
 i[class^="devicon"].small {

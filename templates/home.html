@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row">
         <div class="col-xs-12 title">
-            <h1>Robin Zigmond</h1>
+            <h1 class="name">Robin Zigmond</h1><a href="https://www.linkedin.com/in/robin-zigmond-a6b543146/"><i class="fa fa-linkedin-square fa-3x" aria-hidden="true"></i></a>
             <h2>Aspiring Full Stack Developer based in the North East of England</h2>
         </div>
     </div>
@@ -22,7 +22,7 @@
             </div>
             <ul class="tech-list">
                 {% for tech in techlist %}
-                    <li><a href="/tech/{{ tech.formatted_name }}"><i class="{{ tech.icon }} small"></i> {{ tech.name }}</a></li>
+                    <li><i class="{{ tech.icon }} small"></i> <a href="/tech/{{ tech.formatted_name }}">{{ tech.name }}</a></li>
                 {% endfor %}
             </ul>
         </div>
