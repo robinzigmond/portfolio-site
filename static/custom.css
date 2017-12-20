@@ -59,6 +59,12 @@ i.fa-linkedin-square:hover {
     text-align: center;
 }
 
+.link-img {
+    display: block;
+    max-width: 405px;
+    margin: 0 auto;
+}
+
 .main-pic {
     display: block;
     margin: 40px auto;
@@ -133,14 +139,12 @@ i[class^="devicon"].small {
 }
 
 @media screen and (max-width: 768px) {
-
     .nav-justified {
         overflow: hidden;
     }
-
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 550px) {
     .project-intro {
         max-width: 210px;
     }

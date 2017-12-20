@@ -7,7 +7,9 @@
     </div>
     <div class="row">
         <div class="col-xs-12">
-            <img class="main-pic" src="/media/{{ project.screenshot }}" width="405" height="202">
+            <a class="link-img" href="{{ project.activeLink }}">
+                <img class="main-pic" src="/media/{{ project.screenshot }}" width="405" height="202">
+            </a>
         </div>
     </div>
     <div class="row">
@@ -16,10 +18,10 @@
         </div>
         <div class="col-xs-12">
             {% if project.activeLink %}
-                <p><strong>Link:</strong> <a href="{{ project.activeLink }}">{{ project.activeLink }} </a></p>
+                <p><a href="{{ project.activeLink }}">see online</a></p>
             {% endif %}
             {% if project.gitHubLink %}
-                <p><strong>Code:</strong> <a href="{{ project.gitHubLink }}"> {{ project.gitHubLink }} </a></p>
+                <p><a href="{{ project.gitHubLink }}">see code on Github</a></p>
             {% endif %}
         </div>
     </div>
